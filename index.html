@@ -40,8 +40,11 @@
 			<div class="double" style="background-image:url(pages/17.jpg)"></div>
 			<div class="page" style="background-image:url(pages/21.jpg)"></div>
 		</div>
-	</div>
+		</div>
 </div>
+<a href="https://www.facebook.com/photographybysanand/?ref=aymt_homepage_panel"><div style="color:#94a388;" ><i class="fa fa-facebook-official" ></i> Photography By Sanand </div></a>
+<a href="https://www.instagram.com/sanand_s/"><div style="color:#94a388;" ><i class="fa fa-instagram" ></i> sanand_s</div></a>
+<div style="position:absolute; right:0; color:#94a388;">*Use Arrow Keys.</div>
 
 
 <script type="text/javascript">
@@ -77,13 +80,35 @@ function loadApp() {
 	});
 }
 
+// Arrows
+
+$(document).keydown(function(e){
+
+	var previous = 37, next = 39;
+
+	switch (e.keyCode) {
+		case previous:
+
+			$('.flipbook').turn('previous');
+
+		break;
+		case next:
+
+			$('.flipbook').turn('next');
+
+		break;
+	}
+
+});
+
+
 // Load the HTML4 version if there's not CSS transform
 
 yepnope({
 	test : Modernizr.csstransforms,
 	yep: ['lib/turn.min.js'],
 	nope: ['lib/turn.html4.min.js'],
-	both: ['lib/scissor.min.js', 'css/double-page.css'],
+	both: ['lib/scissor.min.js', 'css/double-page.css','css/font-awesome.min.css'],
 	complete: loadApp
 });
 
